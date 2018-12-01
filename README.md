@@ -15,7 +15,7 @@ Die Ansteuerung erfolgt mit Python.
 ![Schaltplan](/Raspberry_Pi_Python/schaltplan.png)
 
 ### Software:
-  * Pakete installieren`sudo apt-get install python-smbus i2c-tools`
+  * Pakete installieren `sudo apt-get install python-smbus i2c-tools`
   * I²C in der `raspi-config` freischalten
   * In der Datei `/etc/modules` am Ende folgende Zeilen eintragen:
     * `i2c-bcm2708`
@@ -26,9 +26,10 @@ Die Ansteuerung erfolgt mit Python.
 
 ## Arduino
 Es ist ein netzwerkfähiger Arduino notwendig, beispielsweise ein ESP8266.
+Der Sketch ist für zweizeilige Displays ausgelegt, kann aber einfach für weitere Zeilen erweitert werden.
 
 ### Schaltplan:
-![Schaltplan](/Arduino/schaltplan.png)
+![Schaltplan](/LCD_Display_Arduino/schaltplan.png)
 
 Sollte der verwendete Arduino keine 5V liefern, gibt es weitere Anschlussmöglichkeiten:
   * an 3,3V anschließen - Display wird nicht so hell
@@ -36,9 +37,9 @@ Sollte der verwendete Arduino keine 5V liefern, gibt es weitere Anschlussmöglic
   * __externe 5V mit Logik Level Konverter__ - beste Alternative
 
 ## Nutzung:
-Als Default hieren die Skripte auf das Topic `LCD-Display/#`.
+Als Default hören die Skripte auf das Topic `LCD-Display/#`.
 Zur __Steuerung__ wird auf `LCD-Display/command` _on_, _off_ oder _clear_ gepublished.
-Der __Text__ für jede Zeile ist der Payload in den Topics `LCD-Display/line1`und `LCD-Display/line2`, bzw. bis _line4_.
+Der __Text__ für jede Zeile ist der Payload in den Topics `LCD-Display/line1`und `LCD-Display/line2`.
 
 
 Für weitere Informationen siehe [hier](https://tutorials-raspberrypi.de/hd44780-lcd-display-per-i2c-mit-dem-raspberry-pi-ansteuern/).
