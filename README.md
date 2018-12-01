@@ -1,15 +1,15 @@
 # LCD-Display
 
 Die in diesem Repository enthaltenen Dateien ermöglichen das Ansteuern eines HD44780 LCD-Displays.
-Die Daten werden per MQTT an das Display übertragen.
-
-## Raspberry Pi
-Die Ansteuerung erfolgt mit Python über I²C.
+Die Daten werden per MQTT an die Steuerung gesendet und dann über I²C an das Display übertragen.
 
 Dazu wird folgendes benötigt:
   * LCD-Display
   * I²C Display Adapter
-  * I²C Logik Level Konverter
+  * I²C Logik Level Konverter (nur für Raspberry Pi)
+
+## Raspberry Pi
+Die Ansteuerung erfolgt mit Python.
 
 ### Schaltplan:
 ![Schaltplan](/Raspberry_Pi_Python/schaltplan.png)
@@ -25,19 +25,15 @@ Dazu wird folgendes benötigt:
   * mit `sudo i2cdetect -y 1` die I²C-Adresse herausfinden und in `lcddriver.py` bei `ADDRESS` eintragen
 
 ## Arduino
-Die Ansteuerung kann mit und ohne I²C erfolgen.
+Es ist ein netzwerkfähiger Arduino notwendig, beispielsweise ein ESP8266.
 
 ### Schaltplan:
-  * mit I²C:
-  ![Schaltplan](/Arduino/schaltplan_i2c.png)
-  * ohne I²C:
-  ![Schaltplan](/Arduino/schaltplan.png)
+![Schaltplan](/Arduino/schaltplan.png)
 
 ## Nutzung:
-Als Default hört das Skript auf dem Topic `LCD-Display/#`.
+Als Default hieren die Skripte auf das Topic `LCD-Display/#`.
 Zur __Steuerung__ wird auf `LCD-Display/command` _on_, _off_ oder _clear_ gepublished.
 Der __Text__ für jede Zeile ist der Payload in den Topics `LCD-Display/line1`und `LCD-Display/line2`, bzw. bis _line4_.
 
 
 Für weitere Informationen siehe [hier](https://tutorials-raspberrypi.de/hd44780-lcd-display-per-i2c-mit-dem-raspberry-pi-ansteuern/).
-Die I²C Library für Python stammt von [hier](https://github.com/CaptainStouf/raspberry_lcd4x20_I2C).
