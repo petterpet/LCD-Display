@@ -30,6 +30,11 @@ Es ist ein netzwerkfähiger Arduino notwendig, beispielsweise ein ESP8266.
 ### Schaltplan:
 ![Schaltplan](/Arduino/schaltplan.png)
 
+Sollte der verwendete Arduino keine 5V liefern, gibt es weitere Anschlussmöglichkeiten:
+  * an 3,3V anschließen - Display wird nicht so hell
+  * an VIN anschließen - unschön
+  * __externe 5V mit Logik Level Konverter__ - beste Alternative
+
 ## Nutzung:
 Als Default hieren die Skripte auf das Topic `LCD-Display/#`.
 Zur __Steuerung__ wird auf `LCD-Display/command` _on_, _off_ oder _clear_ gepublished.
