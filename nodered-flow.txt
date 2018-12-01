@@ -1,0 +1,206 @@
+[
+    {
+        "id": "dcba7e59.6559a",
+        "type": "mqtt out",
+        "z": "f9a7745d.84b438",
+        "name": "",
+        "topic": "LCD-Display/command",
+        "qos": "",
+        "retain": "",
+        "broker": "1c984b86.f20774",
+        "x": 393,
+        "y": 52,
+        "wires": []
+    },
+    {
+        "id": "364070c5.7f6c",
+        "type": "ui_switch",
+        "z": "f9a7745d.84b438",
+        "name": "",
+        "label": "Display",
+        "group": "b04884f.2163478",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "decouple": "false",
+        "topic": "",
+        "style": "",
+        "onvalue": "on",
+        "onvalueType": "str",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "off",
+        "offvalueType": "str",
+        "officon": "",
+        "offcolor": "",
+        "x": 103,
+        "y": 52,
+        "wires": [
+            [
+                "dcba7e59.6559a"
+            ]
+        ]
+    },
+    {
+        "id": "80ffe6a6.1bb258",
+        "type": "mqtt out",
+        "z": "f9a7745d.84b438",
+        "name": "",
+        "topic": "LCD-Display/command",
+        "qos": "",
+        "retain": "",
+        "broker": "fe9de00c.d0fc6",
+        "x": 394,
+        "y": 101,
+        "wires": []
+    },
+    {
+        "id": "18f91c66.a02104",
+        "type": "mqtt out",
+        "z": "f9a7745d.84b438",
+        "name": "",
+        "topic": "LCD-Display/line1",
+        "qos": "",
+        "retain": "",
+        "broker": "fe9de00c.d0fc6",
+        "x": 373,
+        "y": 150,
+        "wires": []
+    },
+    {
+        "id": "bdd873b7.3b9dd",
+        "type": "mqtt out",
+        "z": "f9a7745d.84b438",
+        "name": "",
+        "topic": "LCD-Display/line2",
+        "qos": "",
+        "retain": "",
+        "broker": "fe9de00c.d0fc6",
+        "x": 370,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "f3459ba4.789b18",
+        "type": "ui_text_input",
+        "z": "f9a7745d.84b438",
+        "name": "",
+        "label": "Zeile 1",
+        "group": "b04884f.2163478",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "mode": "text",
+        "delay": 300,
+        "topic": "",
+        "x": 93,
+        "y": 148,
+        "wires": [
+            [
+                "18f91c66.a02104"
+            ]
+        ]
+    },
+    {
+        "id": "34a3020c.ab5e3e",
+        "type": "ui_text_input",
+        "z": "f9a7745d.84b438",
+        "name": "",
+        "label": "Zeile 2",
+        "group": "b04884f.2163478",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "mode": "text",
+        "delay": 300,
+        "topic": "",
+        "x": 92,
+        "y": 197,
+        "wires": [
+            [
+                "bdd873b7.3b9dd"
+            ]
+        ]
+    },
+    {
+        "id": "961a385f.71ccd8",
+        "type": "ui_button",
+        "z": "f9a7745d.84b438",
+        "name": "",
+        "group": "b04884f.2163478",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Clear Display",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "clear",
+        "payloadType": "str",
+        "topic": "",
+        "x": 110,
+        "y": 101,
+        "wires": [
+            [
+                "80ffe6a6.1bb258"
+            ]
+        ]
+    },
+    {
+        "id": "1c984b86.f20774",
+        "type": "mqtt-broker",
+        "z": "",
+        "broker": "localhost",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "compatmode": true,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    },
+    {
+        "id": "b04884f.2163478",
+        "type": "ui_group",
+        "z": "",
+        "name": "LCD-Display",
+        "tab": "8ca006fa.bf68d8",
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "fe9de00c.d0fc6",
+        "type": "mqtt-broker",
+        "z": "",
+        "broker": "127.0.0.1",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "compatmode": true,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "domoticz/bridge/state",
+        "birthQos": "0",
+        "birthPayload": "online",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    },
+    {
+        "id": "8ca006fa.bf68d8",
+        "type": "ui_tab",
+        "z": "",
+        "name": "Steuerung",
+        "icon": "dashboard"
+    }
+]

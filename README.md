@@ -41,5 +41,11 @@ Als Default hören die Skripte auf das Topic `LCD-Display/#`.
 Zur __Steuerung__ wird auf `LCD-Display/command` _on_, _off_ oder _clear_ gepublished.
 Der __Text__ für jede Zeile ist der Payload in den Topics `LCD-Display/line1`und `LCD-Display/line2`.
 
+### NodeRED:
+Der enthaltende Flow ermöglicht:
+  * Ein- und Ausschalten
+  * Display löschen
+  * Zeichen zeilenweise anzeigen
+
 
 Für weitere Informationen siehe [hier](https://tutorials-raspberrypi.de/hd44780-lcd-display-per-i2c-mit-dem-raspberry-pi-ansteuern/).
