@@ -26,7 +26,6 @@ Die Ansteuerung erfolgt mit Python.
 
 ## Arduino
 Es ist ein netzwerkfähiger Arduino notwendig, beispielsweise ein ESP8266.
-Der Sketch ist für zweizeilige Displays ausgelegt, kann aber einfach für weitere Zeilen erweitert werden.
 
 ### Schaltplan:
 ![Schaltplan](/LCD_Display_Arduino/schaltplan.png)
@@ -39,7 +38,7 @@ Sollte der verwendete Arduino keine 5V liefern, gibt es weitere Anschlussmöglic
 ## Nutzung:
 Als Default hören die Skripte auf das Topic `LCD-Display/#`.
 Zur __Steuerung__ wird auf `LCD-Display/command` _on_, _off_ oder _clear_ gepublished.
-Der __Text__ für jede Zeile ist der Payload in den Topics `LCD-Display/line1`und `LCD-Display/line2`.
+Der __Text__ für jede Zeile ist der Payload in den Topics `LCD-Display/lineX`: `LCD-Display/line1`.
 
 ### NodeRED:
 Der enthaltende Flow ermöglicht:

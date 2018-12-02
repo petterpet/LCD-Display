@@ -91,13 +91,9 @@ void callback(char* topic, byte* payload, unsigned int length) {
     // Text anzeigen
     Serial.println("Text: " + sValue);
 
-    if (sTopic.substring(sTopic.lastIndexOf("/") + 5).toInt() == 1) {
-      lcd.setCursor(0, 0);
-      lcd.print(sValue);
-    }
-    else if (sTopic.substring(sTopic.lastIndexOf("/") + 5).toInt() == 2) {
-      lcd.setCursor(0, 1);
-      lcd.print(sValue);
-    }
+    int line = sTopic.substring(sTopic.lastIndexOf("/") + 5).toInt() - 1;
+
+    lcd.setCursor(0, line);
+    lcd.print(sValue);
   }
 }
