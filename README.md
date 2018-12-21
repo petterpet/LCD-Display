@@ -46,5 +46,21 @@ Der enthaltende Flow ermöglicht:
   * Display löschen
   * Zeichen zeilenweise anzeigen
 
+## Python Shell
+Des Weiteren besteht die Möglichkeit, das Display über die Shell mittels Python anzusteuern.
+Dazu wird als erster Parameter angegeben, ob ein Kommando ausgeführt oder Text angezeigt werden soll.
+Der zweite Parameter ist dann das entsprechende Kommando oder der anzuzeigende Text.
+
+1. command
+  * on
+  * off
+  * clear
+2. line1
+3. line2
+
+### Beispiele
+* `python Display_Shell.py command on`
+* `python Display_Shell.py line1 "Hallo Welt"`
+
 
 Für weitere Informationen siehe [hier](https://tutorials-raspberrypi.de/hd44780-lcd-display-per-i2c-mit-dem-raspberry-pi-ansteuern/).
