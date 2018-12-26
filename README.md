@@ -36,6 +36,8 @@ Anschließend wird das Skript mittels `python Display_MQTT.py` gestartet.
 ## Arduino
 Es ist ein netzwerkfähiger Arduino notwendig, beispielsweise ein ESP8266.
 
+Zunächst müssen die Wifi-Zugangsdaten und die IP-Adresse des Brokers in den Sketch eingetragen werden. Danach kann dieser kommpiliert und geflasht werden.
+
 ### Schaltplan
 ![Schaltplan](/LCD_Display_Arduino/schaltplan.png)
 
