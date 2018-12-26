@@ -4,18 +4,21 @@ Die in diesem Repository enthaltenen Dateien ermöglichen das Ansteuern eines HD
 Die Daten werden per MQTT an einen Raspberry Pi oder Arduino gesendet und dann über I²C an das Display übertragen.
 
 Dazu wird folgendes benötigt:
-  * LCD-Display
+  * Raspbbery Pi / Arduino
+  * MQTT-Broker (zum Beispiel [Mosquitto](https://mosquitto.org/))
+
+  * LCD-Display (HD44780)
   * I²C Display Adapter
   * I²C Logik Level Konverter (nur für Raspberry Pi)
-  * ein MQTT-Broker (zum Beispiel [Mosquitto](https://mosquitto.org/))
+
 
 ## Raspberry Pi
 Die Ansteuerung erfolgt mit Python.
 
-### Schaltplan:
+### Schaltplan
 ![Schaltplan](/Raspberry_Pi_Python/schaltplan.png)
 
-### Software:
+### Software
   * Pakete installieren: `sudo apt-get install python-smbus i2c-tools`
   * Python MQTT Client installieren: `pip install paho-mqtt`
   * I²C in der `raspi-config` freischalten
@@ -33,7 +36,7 @@ Anschließend wird das Skript mittels `python Display_MQTT.py` gestartet.
 ## Arduino
 Es ist ein netzwerkfähiger Arduino notwendig, beispielsweise ein ESP8266.
 
-### Schaltplan:
+### Schaltplan
 ![Schaltplan](/LCD_Display_Arduino/schaltplan.png)
 
 Sollte der verwendete Arduino keine 5V liefern, gibt es weitere Anschlussmöglichkeiten:
@@ -41,12 +44,12 @@ Sollte der verwendete Arduino keine 5V liefern, gibt es weitere Anschlussmöglic
   * an VIN anschließen - unschön
   * __externe 5V mit Logik Level Konverter__ - beste Alternative
 
-## Nutzung:
+## Nutzung
 Als Default hören die Skripte auf das Topic `LCD-Display/#`.
 Zur __Steuerung__ wird auf `LCD-Display/command` _on_, _off_ oder _clear_ gepublished.
 Der __Text__ für jede Zeile ist der Payload der Topics `LCD-Display/lineX`: `LCD-Display/line1`.
 
-### NodeRED:
+### NodeRED
 Der enthaltende Flow ermöglicht:
   * Ein- und Ausschalten
   * Display löschen
