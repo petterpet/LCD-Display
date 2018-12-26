@@ -1,5 +1,3 @@
-#Python2
-
 # Initialisierung
 import time
 import lcddriver
